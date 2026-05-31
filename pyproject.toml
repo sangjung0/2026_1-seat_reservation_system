@@ -1,0 +1,46 @@
+[project]
+name = "seat_reservation_system"
+version = "0.0.1"
+description = "A seat reservations system."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.1.0",
+    "ipywidgets>=8.1.7",
+    "jupyterlab>=4.4.10",
+    "matplotlib>=3.10.8",
+    "notebook>=7.4.7",
+]
+test = [
+    "httpx>=0.27.0",
+    "pytest>=8.4.2",
+    "pytest-dotenv>=0.5.2",
+    "mypy>=1.10.0",
+    "ruff>=0.15.8",
+]
+
+[tool.mypy]
+strict = true
+mypy_path = [
+]
+exclude = [
+]
+files = [
+    "seat_reservation_system",
+    "tests",
+]
+
+[[tool.mypy.overrides]]
+module = []
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+env_files=[".env"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["seat_reservation_system*"]
